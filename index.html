@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100&display=swap');
+
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Fraunces', serif;
+    }
+
+    .heading-one {
+      height: 100vh;
+      background: url("./images/desktop/image-header.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .desktop-header {
+      display: flex;
+      padding: 3em 3em 0 3em;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .desktop-header img {
+      width: 200px;
+    }
+
+    .desktop-header .navlink a{
+      padding: 0 2em;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .desktop-header .navlink a:last-child {
+      color: #000;
+      background: #fff;
+      padding: 1em 2em;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .mobile-header {
+      display: none;
+      padding: 2em 2em 0 2em;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mobile-navlink {
+      display: none;
+      /* margin-top: 2em; */
+      position: absolute;
+      top: 15%;
+      right: 0;
+      left: 0;
+    }
+
+    .mobile-navlink div {
+      background: #fff;
+      margin: 0 2em;
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    .mobile-navlink ul {
+      padding-left: 0;
+    }
+
+    .mobile-navlink ul li {
+      display: block;
+      padding: 1em 0;
+      font-size: 18px;
+    }
+
+    .mobile-navlink ul li a {
+      text-decoration: none;
+      color: #8f8d98;
+    }
+
+    .mobile-navlink ul li:last-child a{
+      padding: 1em 2em;
+      background: #fbd601;
+      border-radius: 50px;
+      color: #38391c;
+      font-weight: 600;
+    }
+
+    
+    .heading-one-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3em;
+    }
+
+    .heading-one-content h1 {
+      text-transform: uppercase;
+      font-size: 100px;
+      color: #fff;
+    }
+
+    .brand-layout-one, .brand-layout-two, .brand-layout-three {
+      display: flex;
+      height: 700px;
+    }
+
+    .brand-layout-one-img  {
+      background: url("./images/desktop/image-transform.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .brand-layout-one-content, .brand-layout-one-img  {
+      width: 50%;
+    }
+
+    .brand-layout-two-img  {
+      background: url("./images/desktop/image-stand-out.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .brand-layout-two-content, .brand-layout-two-img {
+      width: 50%;
+    }
+
+    .brand-layout-one-content, .brand-layout-two-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .brand-layout-one-content div {
+      padding-left: 10em;
+      padding-right: 6em;
+      color: #202d3f;
+    }
+
+    .brand-layout-two-content div {
+      padding-left: 5em;
+      padding-right: 7em;
+      color: #202d3f;
+    }
+
+
+    .brand-layout-one-content div h1, .brand-layout-two-content div h1 {
+      font-size: 50px;
+      font-weight: 800;
+      margin-top: 0;
+    }
+
+    .brand-layout-one-content div p, .brand-layout-two-content div p {
+      color: #9793a0;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 40px;
+    }
+
+    .brand-layout-one-content div button, .brand-layout-two-content div button {
+      background: none;
+      border: 0;
+      margin-left: 10px;
+      margin-top: 2em;
+      position: relative;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .brand-layout-one-content div button::after {
+      content: ' ';
+      background: #ffd600;
+      height: 10px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: -10px;
+      display: block;
+      padding: 0 em;
+      z-index: -1;
+      border-radius: 2.5px;
+    }
+
+    .brand-layout-two-content div button::after {
+      content: ' ';
+      background: #ff7364;
+      height: 10px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: -10px;
+      display: block;
+      padding: 0 em;
+      z-index: -1;
+      border-radius: 2.5px;
+    }
+
+    .brand-layout-one-img img, .brand-layout-two-img img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .brand-layout-three h1 {
+      font-size: 30px;
+      text-transform: capitalize;
+      font-weight: 600;
+      color: #164e41;
+    }
+
+    .brand-layout-three p {
+      color: #164e41;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+    }
+  
+    .brand-layout-three-img-one {
+      background: url("./images/desktop/image-graphic-design.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .brand-layout-three-img-two {
+      background: url("./images/desktop/image-photography.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .brand-layout-three-img-one, .brand-layout-three-img-two {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .brand-layout-three-img-one div, .brand-layout-three-img-two div {
+      margin-top: 25em;
+      width: 450px;
+    }
+
+    .testimonial{
+      width: 80%;
+      margin: auto;
+      margin-top: 7em;
+      margin-bottom: 7em;
+    }
+
+    .testimonial-main {
+      display: flex;
+    }
+
+    .testimonial h1 {
+      text-align: center;
+      text-transform: uppercase;
+      color: #a4a7aa;
+      font-size: 35px;
+    }
+
+    .testimonial-card {
+      width: 33.3%;
+      padding: 2em 1em;
+      text-align: center;
+    }
+
+    .testimonial-card img {
+      width: 80px;
+      border-radius: 50%;
+    }
+
+    .testimonial-card-content {
+      margin-top: 3em;
+      font-size: 19px;
+      font-weight: 600;
+      color: #6b6c6a;
+      line-height: 30px;
+    }
+
+    .testimonial-card-name {
+      margin-top: 3em;
+      margin-bottom: 0;
+      font-size: 23px;
+      font-weight: 600;
+      text-transform: capitalize;
+      color: #232e37;
+    }
+
+    .testimonial-card-designation {
+      font-size: 16px;
+      font-weight: 400;
+      color: #b7b5b6;
+    }
+
+
+    .gallery {
+      display: flex;
+      height: 450px;
+    }
+    
+    .gallery .gallery-milkbottles{
+      width: 25%;
+      background: url('./images/desktop/image-gallery-milkbottles.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery .gallery-orange {
+      width: 25%;
+      background: url('./images/desktop/image-gallery-orange.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery .gallery-cone {
+      width: 25%;
+      background: url('./images/desktop/image-gallery-cone.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery .gallery-sugarcubes {
+      width: 25%;
+      background: url('./images/desktop/image-gallery-sugarcubes.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    footer {
+      background: #90d4c5;
+      text-align: center;
+      padding: 3em 0;
+    }
+
+    footer .footer-logo {
+      width: 200px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+      color: #2c7566;
+    }
+
+    footer ul li {
+      display: inline-block;
+      padding: 2em 1.5em;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .social-icons ul li {
+      padding: 0.8em 1em;
+    }
+
+    .attribution {
+      background: #90d4c5;
+      color: #2c7566;
+    }
+
+
+    /* For Smartphone */
+    @media screen and (max-width: 767px){
+
+      .desktop-header {
+        display: none;
+      }
+
+      .mobile-header {
+        display: flex;
+      }
+
+      .mobile-navlink.active {
+        display: block;
+        transition: 1s;
+      }
+
+      .heading-one {
+        background-position: center;
+      }
+
+      .heading-one-content h1 {
+        font-size: 50px;
+        text-align: center;
+      }
+
+
+
+      .brand-layout-one {
+        flex-direction: column-reverse;
+        height: auto;
+      }
+
+      .brand-layout-two {
+        height: auto;
+      }
+
+      .brand-layout-three {
+        height: auto;
+      }
+
+      .brand-layout-two, .brand-layout-three {
+        flex-direction: column;
+      }
+
+      .brand-layout-one-content {
+        width: 100%;
+      }
+
+      .brand-layout-one-img {
+        height: 400px;
+        width: 100%;
+        background-position: center;
+      }
+
+      .brand-layout-one-content div {
+        padding: 3em 2em;
+        text-align: center;
+      }
+
+      .brand-layout-one-content div h1, .brand-layout-two-content div h1 {
+        font-size: 40px;
+      }
+
+      .brand-layout-one-content div p, .brand-layout-two-content div p {
+        font-size: 16px;
+      }
+
+      .brand-layout-two-img {
+        height: 400px;
+        width: 100%;
+        background-position: center;
+      }
+
+      .brand-layout-two-content {
+        width: 100%;
+      }
+
+      .brand-layout-two-content div {
+        padding: 3em 2em;
+        text-align: center;
+      }
+
+      .brand-layout-three-img-one, .brand-layout-three-img-two {
+        width: 100%;
+      }
+
+      .brand-layout-three-img-one div, .brand-layout-three-img-two div {
+        width: 100%;
+        padding: 0 2em 2em;
+      }
+
+      .brand-layout-three p {
+        font-size: 14px;
+      }
+
+
+      .testimonial-main {
+        flex-direction: column;
+      }
+
+      .testimonial h1 {
+        font-size: 20px;
+      }
+
+      .testimonial-card {
+        width: 100%;
+        padding: 2em 0;
+      }
+
+      .testimonial-card-content {
+        font-size: 14px;
+      }
+
+      .testimonial-card-designation{
+        font-size: 13px;
+      }
+
+      .gallery {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+      }
+
+      .gallery .gallery-milkbottles, .gallery .gallery-orange, .gallery .gallery-cone, .gallery .gallery-sugarcubes {
+        width: 50%;
+        height: 200px;
+      }
+
+      
+
+    }
+
+
+    @media screen and (max-width: 480px) {
+    
+        
+    }
+
+    @media screen and (max-width: 320px) {
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <section class="heading-one">
+
+    <div class="desktop-header">
+
+      <img src="./images/logo.svg" alt="sunny-logo" />
+
+      <div class="navlink">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="mobile-header">
+
+      <img src="./images/logo.svg" alt="sunny-logo" />
+
+      <img src="./images/icon-hamburger.svg" class="mobile-burger" alt="">
+
+    </div>
+
+    <div class="mobile-navlink">
+      <div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="heading-one-content">
+      <h1>We are creatives</h1>
+      <img src="./images/icon-arrow-down.svg" alt="">
+    </div>
+    
+  </section>
+
+
+  <section>
+    <div class="brand-layout-one">
+      <div class="brand-layout-one-content">
+        <div>
+          <h1>Transform your brand</h1>
+          <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
+          <button>Learn more</button>
+        </div>
+      </div>
+      <div class="brand-layout-one-img"></div>
+    </div>
+
+    <div class="brand-layout-two">
+      <div class="brand-layout-two-img"></div>
+      <div class="brand-layout-two-content">
+        <div>
+          <h1>Stand out to the right audience</h1>
+          <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.</p>
+          <button>Learn more</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-layout-three">
+      <div class="brand-layout-three-img-one">
+        <div>
+          <h1>Graphic design</h1>
+          <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.</p>
+        </div>
+      </div>
+      <div class="brand-layout-three-img-two">
+        <div>
+          <h1>Photography</h1>
+          <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="testimonial">
+      <h1>Client testimonials</h1>
+      <div class="testimonial-main">
+        <div class="testimonial-card">
+          <img src="./images/image-emily.jpg" alt="">
+          <p class="testimonial-card-content">We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+          <p class="testimonial-card-name">Emily R.</p>
+          <p class="testimonial-card-designation">Marketing Director</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="./images/image-thomas.jpg" alt="">
+          <p class="testimonial-card-content">Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.</p>
+          <p class="testimonial-card-name">Thomas S.</p>
+          <p class="testimonial-card-designation">Chief Operating Officer</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="./images/image-jennie.jpg" alt="">
+          <p class="testimonial-card-content">Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+          <p class="testimonial-card-name">Jennie F.</p>
+          <p class="testimonial-card-designation">Business Owner</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="gallery">
+      <div class="gallery-milkbottles"></div>
+      <div class="gallery-orange"></div>
+      <div class="gallery-cone"></div>
+      <div class="gallery-sugarcubes"></div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div>
+      <img src="./images/footer-logo.svg" class="footer-logo" alt="Sunnyside-loog" />
+      <div>
+        <ul>
+          <li>About</li>
+          <li>Services</li>
+          <li>Projects</li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <ul>
+          <li><img src="./images/icon-facebook.svg" alt="Facebook-icon" /></li>
+          <li><img src="./images/icon-instagram.svg" alt="Instagram-icon" /></li>
+          <li><img src="./images/icon-twitter.svg" alt="Twitter-icon" /></li>
+          <li><img src="./images/icon-pinterest.svg" alt="Pineterest-icon" /></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/wisdomanaba" target="_blank">Wisdom Anaba</a>.
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
